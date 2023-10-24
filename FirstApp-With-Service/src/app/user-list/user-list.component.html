@@ -1,0 +1,19 @@
+<div>
+  <div *ngIf="specificUser">
+    `     <li><strong>{{ specificUser.name }}</strong></li>
+          <div style="margin-left: 10px;"><strong>Email:</strong> {{specificUser.email}}</div>
+          <div style="margin-left: 10px;"><strong>Website:</strong> {{specificUser.website}}</div>
+  </div>
+</div>
+<button (click)="FetchParticularUser(id)">Click Me</button>
+<div>
+  <ul *ngIf="users; else loading">
+    <div *ngFor="let user of users">
+        <li><strong>{{ user.name }}</strong></li>
+          <div style="margin-left: 10px;"><strong>Email:</strong> {{user.email}}</div>
+          <div style="margin-left: 10px;"><strong>Website:</strong> {{user.website}}</div>
+    </div>
+  </ul>
+  <ng-template #loading>Loading...</ng-template>
+</div>
+
